@@ -1,4 +1,5 @@
-const questions = [
+var questions=[];
+const bff = [
     {
     numb: 1,
     question: "What does HTML stand for?",
@@ -43,7 +44,7 @@ const questions = [
       "Structured Query Language"
     ]
   },
-    {
+  {
     numb: 5,
     question: "What does XML stand for?",
     answer: "eXtensible Markup Language",
@@ -53,9 +54,12 @@ const questions = [
       "eXTra Multi-Program Language",
       "eXamine Multiple Language"
     ]
-  },
+  }
+];
+
+const python=[
   {
-    numb: 6,
+    numb: 1,
     question: "Who developed Python Programming Language?",
     answer: "Guido van Rossum",
     options: [
@@ -66,7 +70,7 @@ const questions = [
     ]
   },
   {
-    numb: 7,
+    numb: 2,
     question: "Which type of Programming does Python support?",
     answer: "all of the mentioned",
     options: [
@@ -77,7 +81,7 @@ const questions = [
     ]
   },
   {
-    numb: 8,
+    numb: 3,
     question: "Is Python case sensitive when dealing with identifiers?",
     answer: "yes",
     options: [
@@ -88,7 +92,7 @@ const questions = [
     ]
   },
   {
-    numb: 9,
+    numb: 4,
     question: "Which of the following is the correct extension of the Python file?",
     answer: ".py",
     options: [
@@ -99,7 +103,7 @@ const questions = [
     ]
   },
   {
-    numb: 10,
+    numb: 5,
     question: "Which of the following is the correct extension of the Python file?",
     answer: "Python code is both compiled and interpreted",
     options: [
@@ -108,9 +112,12 @@ const questions = [
       "Python code is only compiled",
       "Python code is only interpreted"
     ]
-  },
+  }
+];
+
+const java=[
   {
-    numb: 11,
+    numb: 1,
     question: "Multiple inheritance means,",
     answer: "one class inheriting from more super classes",
     options: [
@@ -121,7 +128,7 @@ const questions = [
     ]
   },
   {
-    numb: 12,
+    numb: 2,
     question: "Which statement is not true in java language?",
     answer: "A private member of a class cannot be accessed by the methods of the same class.",
     options: [
@@ -132,7 +139,7 @@ const questions = [
     ]
   },
   {
-    numb: 13,
+    numb: 3,
     question: "To prevent any method from overriding, we declare the method as,",
     answer: "final",
     options: [
@@ -143,7 +150,7 @@ const questions = [
     ]
   },
   {
-    numb: 14,
+    numb: 4,
     question: "Which one of the following is not true?",
     answer: "An abstract class cannot have non-abstract methods.",
     options: [
@@ -154,7 +161,7 @@ const questions = [
     ]
   },
   {
-    numb: 15,
+    numb: 5,
     question: "The fields in an interface are implicitly specified as,",
     answer: "both static and final ",
     options: [
@@ -163,9 +170,12 @@ const questions = [
       "private",
       "both static and final"
     ]
-  },
+  }
+];
+
+const c =[
   {
-    numb: 16,
+    numb: 1,
     question: "Who is the father of C language?",
     answer: "Dennis Ritchie",
     options: [
@@ -176,7 +186,7 @@ const questions = [
     ]
   },
   {
-    numb: 17,
+    numb: 2,
     question: "Which of the following is not a valid C variable name?",
     answer: "int $main;",
     options: [
@@ -187,8 +197,8 @@ const questions = [
     ]
   },
   {
-    numb: 18,
-    question: "All keywords in C are in ____________",
+    numb: 3,
+    question: "All keywords in C are in",
     answer: "LowerCase letters",
     options: [
       "LowerCase letters",
@@ -198,7 +208,7 @@ const questions = [
     ]
   },
   {
-    numb: 19,
+    numb: 4,
     question: "Which of the following is true for variable names in C?",
     answer: "Variable names cannot start with a digit",
     options: [
@@ -209,7 +219,7 @@ const questions = [
     ]
   },
   {
-    numb: 20,
+    numb: 5,
     question: "Which is valid C expression?",
     answer: "int my_num = 100000;",
     options: [
@@ -220,10 +230,14 @@ const questions = [
     ]
   }
 ];
+
+
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = info_box.querySelector(".buttons .restart");
+const topic = document.querySelector(".topic")
+const start = topic.querySelectorAll(".topic_list .topic_text .cont2")
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
@@ -241,11 +255,52 @@ exit_btn.onclick = ()=>{
 
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); 
-    quiz_box.classList.add("activeQuiz"); 
-    showQuetions(0); 
-    queCounter(1); 
-    startTimer(15); 
-    startTimerLine(0); 
+    topic.classList.add("activeTopic"); 
+    // showQuetions(0); 
+    // queCounter(1); 
+    // startTimer(15); 
+    // startTimerLine(0); 
+}
+
+start[0].onclick = ()=>{
+  topic.classList.remove("activeTopic"); 
+  quiz_box.classList.add("activeQuiz");
+  questions=bff;
+  showQuetions(0); 
+  queCounter(1); 
+  startTimer(15); 
+  startTimerLine(0); 
+}
+
+start[1].onclick = ()=>{
+  topic.classList.remove("activeTopic"); 
+  quiz_box.classList.add("activeQuiz");
+  questions=python;
+  console.log(questions);
+  showQuetions(0); 
+  queCounter(1); 
+  startTimer(15); 
+  startTimerLine(0); 
+}
+
+start[2].onclick = ()=>{
+  topic.classList.remove("activeTopic"); 
+  quiz_box.classList.add("activeQuiz");
+  questions=java;
+  showQuetions(0); 
+  queCounter(1); 
+  startTimer(15); 
+  startTimerLine(0); 
+}
+
+start[3].onclick = ()=>{
+  topic.classList.remove("activeTopic"); 
+  quiz_box.classList.add("activeQuiz");
+  questions=c;
+  showQuetions(0); 
+  queCounter(1); 
+  startTimer(15); 
+  startTimerLine(0); 
 }
 
 let timeValue =  15;

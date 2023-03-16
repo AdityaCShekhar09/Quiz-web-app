@@ -18,6 +18,7 @@ body{
 
 .start_btn,
 .info_box,
+.topic,
 .quiz_box,
 .result_box{
     position: absolute;
@@ -30,6 +31,7 @@ body{
 
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
+.topic.activeTopic,
 .result_box.activeResult{
     opacity: 1;
     z-index: 5;
@@ -105,6 +107,38 @@ body{
     border-radius: 5px;
     border: 1px solid #007bff;
     transition: all 0.3s ease;
+}
+
+.topic{
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.topic .topic_title{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.topic .topic_list{
+    padding: 15px 30px;
+} 
+
+.topic .topic_list .topic_text{
+    height: 40px;
+    margin: 5px 0;
+    font-size: 17px;
 }
 
 .quiz_box{
@@ -368,7 +402,32 @@ footer button.show{
     background: #007bff;
 }
 
+.topic button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+button.restart.cont2{
+    position: relative;
+    float: right;
+    color: #fff;
+    background: #007bff;
+}
+
 .buttons button.restart:hover{
+    background: #0263ca;
+}
+
+button.restart.cont2:hover{
     background: #0263ca;
 }
 
